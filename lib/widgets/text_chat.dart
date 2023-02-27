@@ -12,6 +12,7 @@ class TextChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Card(
           elevation: 5,
