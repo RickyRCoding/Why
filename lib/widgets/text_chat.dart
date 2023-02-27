@@ -14,12 +14,15 @@ class TextChat extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Card(
-          elevation: 5,
-          color: Colors.purple[50],
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Text(text),
+        Padding(
+          padding: EdgeInsets.all(20),
+          child: Card(
+            elevation: 5,
+            color: Colors.purple[50],
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(text),
+            ),
           ),
         ),
       ],
