@@ -1,6 +1,7 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:why/widgets/text_chat.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +21,9 @@ class _MyAppState extends State<MyApp> {
           title: Text("The Stupid ChatBot."),
         ),
         body: Column(
-          children: [],
+          children: [
+            TextChat("Hello there!"),
+          ],
         ),
       ),
     );
