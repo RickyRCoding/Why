@@ -20,10 +20,12 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.purple[300],
           title: Text("The Stupid ChatBot."),
         ),
-        body: Column(
-          children: [
-            TextChat("Hello there!"),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextChat("Hello there!"),
+            ],
+          ),
         ),
       ),
     );
