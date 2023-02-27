@@ -24,7 +24,6 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               TextChat("Hello there!"),
-              TextChat("Why."),
             ],
           ),
         ),
