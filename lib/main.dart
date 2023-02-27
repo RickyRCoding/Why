@@ -16,6 +16,7 @@ class _MyAppState extends State<MyApp> {
       title: "The Stupid ChatBot.",
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.purple[300],
           title: Text("The Stupid ChatBot."),
         ),
       ),
