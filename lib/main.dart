@@ -1,7 +1,7 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_function_literals_in_foreach_calls
 
-import 'package:flutter/material.dart';
-import 'package:why/widgets/text_chat.dart';
+import "package:flutter/material.dart";
+import "package:why/widgets/text_chat.dart";
 
 void main() => runApp(MyApp());
 
@@ -12,6 +12,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final myController = TextEditingController();
+  bool show = false;
+  List<Widget> chats = [];
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,35 @@ class _MyAppState extends State<MyApp> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              TextChat("Hello there!"),
+              if (show)
+                for (Widget i in chats) i
+              else
+                Center(
+                  child: TextChat("Start typing!"),
+                ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 400,
+                    child: TextField(
+                      controller: myController,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        setState(() {
+                          show = true;
+                          chats.add(TextChat(myController.text));
+                        });
+                      },
+                      tooltip: "Send",
+                      child: Icon(Icons.send_rounded),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
