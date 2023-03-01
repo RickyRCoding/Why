@@ -17,6 +17,9 @@ class TextChat extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(20),
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
+            ),
             elevation: 5,
             color: Colors.purple[50],
             child: Padding(
