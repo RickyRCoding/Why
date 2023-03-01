@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
                           show = true;
                           chats.add(TextChat(myController.text));
                           chats.add(BotChat("Why."));
+                          myController.clear();
                         });
                       },
                       tooltip: "Send",
