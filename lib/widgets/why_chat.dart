@@ -20,7 +20,8 @@ class BotChat extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
               side: BorderSide(
-                color: Colors.black,
+                color: Colors.black38,
+                width: 2.0,
               ),
             ),
             elevation: 5,
