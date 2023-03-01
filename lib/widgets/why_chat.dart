@@ -19,6 +19,9 @@ class BotChat extends StatelessWidget {
           child: Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
+              side: BorderSide(
+                color: Colors.black,
+              ),
             ),
             elevation: 5,
             child: Padding(
