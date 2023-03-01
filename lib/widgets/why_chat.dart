@@ -2,10 +2,10 @@
 
 import "package:flutter/material.dart";
 
-class TextChat extends StatelessWidget {
+class BotChat extends StatelessWidget {
   final String text;
 
-  TextChat(
+  BotChat(
     this.text,
   );
 
