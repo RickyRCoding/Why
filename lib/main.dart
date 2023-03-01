@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import "package:why/widgets/text_chat.dart";
+import "package:why/widgets/why_chat.dart";
 
 void main() => runApp(MyApp());
 
@@ -43,7 +44,7 @@ class _MyAppState extends State<MyApp> {
                         setState(() {
                           show = true;
                           chats.add(TextChat(myController.text));
-                          chats.add(TextChat("Why."));
+                          chats.add(BotChat("Why."));
                         });
                       },
                       tooltip: "Send",
