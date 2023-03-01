@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
                   child: TextChat("Start typing!"),
                 ),
               SizedBox(
+                height: 100,
                 width: 400,
                 child: TextField(
                   controller: myController,
