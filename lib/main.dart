@@ -33,17 +33,12 @@ class _MyAppState extends State<MyApp> {
                 Center(
                   child: TextChat("Start typing!"),
                 ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 400,
-                    child: TextField(
-                      controller: myController,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: FloatingActionButton(
+              SizedBox(
+                width: 400,
+                child: TextField(
+                  controller: myController,
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
                           show = true;
@@ -52,10 +47,11 @@ class _MyAppState extends State<MyApp> {
                         });
                       },
                       tooltip: "Send",
-                      child: Icon(Icons.send_rounded),
+                      icon: Icon(Icons.send_rounded),
+                      color: Colors.amber,
                     ),
                   ),
-                ],
+                ),
               )
             ],
           ),
