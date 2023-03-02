@@ -28,11 +28,15 @@ class _MyAppState extends State<MyApp> {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: SingleChildScrollView(
+            reverse: true,
             child: Column(
               children: [
                 if (show)
-                  Column(
-                    children: chats,
+                  SingleChildScrollView(
+                    reverse: true,
+                    child: Column(
+                      children: chats,
+                    ),
                   )
                 else
                   Center(
