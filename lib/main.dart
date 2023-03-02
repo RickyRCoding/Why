@@ -29,7 +29,9 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               if (show)
-                for (Widget i in chats) i
+                Column(
+                  children: chats,
+                )
               else
                 Center(
                   child: TextChat("Start typing!"),
