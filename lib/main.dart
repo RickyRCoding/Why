@@ -1,8 +1,11 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_function_literals_in_foreach_calls
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_function_literals_in_foreach_calls, unrelated_type_equality_checks, prefer_contains
+
+import "dart:async";
 
 import "package:flutter/material.dart";
 import "package:why/widgets/text_chat.dart";
 import "package:why/widgets/why_chat.dart";
+import "dart:io";
 
 void main() => runApp(MyApp());
 
@@ -14,7 +17,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final myController = TextEditingController();
   bool show = false;
-  List<Widget> chats = [];
+  List<String> chats = [];
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,16 @@ class _MyAppState extends State<MyApp> {
                   SingleChildScrollView(
                     reverse: true,
                     child: Column(
-                      children: chats,
+                      children: [
+                        for (var chat in chats)
+                          if (chat == chats.last)
+                            sleep(Duration(seconds: 1)) as Widget,
+                            BotChat(chats.last)
+                          else if (chat == "Why.")
+                            BotChat(chat)
+                          else
+                            TextChat(chat)
+                      ],
                     ),
                   )
                 else
@@ -52,8 +64,8 @@ class _MyAppState extends State<MyApp> {
                         onPressed: () {
                           setState(() {
                             show = true;
-                            chats.add(TextChat(myController.text));
-                            chats.add(BotChat("Why."));
+                            chats.add(myController.text);
+                            chats.add("Why.");
                             myController.clear();
                           });
                         },
