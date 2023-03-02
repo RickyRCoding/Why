@@ -25,40 +25,43 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.purple[300],
           title: Text("The Stupid ChatBot."),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              if (show)
-                Column(
-                  children: chats,
-                )
-              else
-                Center(
-                  child: TextChat("Start typing!"),
-                ),
-              SizedBox(
-                height: 100,
-                width: 400,
-                child: TextField(
-                  controller: myController,
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          show = true;
-                          chats.add(TextChat(myController.text));
-                          chats.add(BotChat("Why."));
-                          myController.clear();
-                        });
-                      },
-                      tooltip: "Send",
-                      icon: Icon(Icons.send_rounded),
-                      color: Colors.amber,
+        body: Align(
+          alignment: Alignment.bottomCenter,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                if (show)
+                  Column(
+                    children: chats,
+                  )
+                else
+                  Center(
+                    child: TextChat("Start typing!"),
+                  ),
+                SizedBox(
+                  height: 100,
+                  width: 400,
+                  child: TextField(
+                    controller: myController,
+                    decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            show = true;
+                            chats.add(TextChat(myController.text));
+                            chats.add(BotChat("Why."));
+                            myController.clear();
+                          });
+                        },
+                        tooltip: "Send",
+                        icon: Icon(Icons.send_rounded),
+                        color: Colors.amber,
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
