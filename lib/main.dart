@@ -41,7 +41,6 @@ class _MyAppState extends State<MyApp> {
                       children: [
                         for (var chat in chats)
                           if (chat == chats.last)
-                            sleep(Duration(seconds: 1)) as Widget,
                             BotChat(chats.last)
                           else if (chat == "Why.")
                             BotChat(chat)
